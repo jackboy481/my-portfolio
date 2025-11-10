@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sameer Khan | Portfolio</title>
+  <meta name="description" content="Sameer Khan — BCA graduate and developer. Projects in web dev and Python. Open to software internships and full‑time roles." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <style>
+    :root {
+      --bg: #0b0c0f;
+      --text: #e6e8ea;
+      --muted: #9aa3ab;
+      --card: #13151a;
+      --accent: #7c5cff;
+      --link: #9b8bff;
+      --ring: rgba(124,92,255,.35);
+    }
+    :root.light {
+      --bg: #f7f8fb;
+      --text: #121418;
+      --muted: #49525a;
+      --card: #ffffff;
+      --accent: #5a48e6;
+      --link: #4236d8;
+      --ring: rgba(66,54,216,.25);
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { width: min(1100px, 92%); margin: 0 auto; }
+
+    header {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: saturate(1.2) blur(8px);
+      background: color-mix(in oklab, var(--bg), transparent 30%);
+      border-bottom: 1px solid color-mix(in oklab, var(--text), transparent 90%);
+    }
+    .header-content { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+    .brand { display:flex; gap: 14px; align-items:center; }
+    .brand h1 { font-size: 20px; margin:0; font-weight: 800; }
+    nav { display: flex; gap: 18px; flex-wrap: wrap; }
+    nav a { font-weight: 600; opacity: .9; }
+
+    .theme-toggle {
+      display: inline-flex; align-items: center; gap: 8px;
+      border: 1px solid color-mix(in oklab, var(--text), transparent 85%);
+      background: var(--card);
+      padding: 8px 12px; border-radius: 999px; cursor: pointer;
+    }
+    .theme-toggle:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
+
+    .hero { padding: 48px 0 16px; }
+    .hero h2 { font-size: clamp(28px, 4vw, 40px); margin: 6px 0 10px; }
+    .muted { color: var(--muted); }
+
+    .chips { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+    .chip { background: var(--card); border: 1px solid color-mix(in oklab, var(--text), transparent 90%); padding: 6px 10px; border-radius: 999px; font-size: 13px; }
+
+    section { padding: 30px 0; }
+    h3.section-title { font-size: 20px; margin: 0 0 16px; }
+
+    .grid { display: grid; gap: 16px; }
+    .grid.two { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+
+    .card { background: var(--card); border: 1px solid color-mix(in oklab, var(--text), transparent 90%); border-radius: 16px; padding: 16px; }
+    .card h4 { margin: 0 0 6px; font-size: 18px; }
+
+    .social-links { display:flex; gap: 12px; flex-wrap: wrap; }
+    .social-links a { display:inline-flex; align-items:center; gap:8px; font-weight:600; background: var(--card); border: 1px solid color-mix(in oklab, var(--text), transparent 90%); padding:8px 12px; border-radius: 12px; }
+
+    .btn { display:inline-flex; align-items:center; gap:8px; font-weight:700; background: var(--accent); color: white; padding:10px 14px; border-radius: 12px; border: none; }
+    .btn:hover { filter: brightness(1.05); text-decoration: none; }
+
+    footer { border-top: 1px solid color-mix(in oklab, var(--text), transparent 90%); padding: 22px 0; margin-top: 30px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <div class="brand">
+        <i class="fa-solid fa-terminal"></i>
+        <h1>Sameer Khan</h1>
+      </div>
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-pressed="false" title="Toggle theme">
+        <i class="fa-solid fa-sun" aria-hidden="true"></i>
+        <span class="muted">Theme</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="about" class="hero">
+      <p class="muted">New Delhi • Software Developer</p>
+      <h2>Building clean web apps and Python projects — aiming for full‑stack with AI integration.</h2>
+      <div class="chips">
+        <span class="chip">C</span>
+        <span class="chip">C++</span>
+        <span class="chip">Python</span>
+        <span class="chip">HTML</span>
+        <span class="chip">CSS</span>
+        <span class="chip">JavaScript</span>
+        <span class="chip">Bootstrap</span>
+        <span class="chip">Git & GitHub</span>
+      </div>
+      <div style="margin-top:16px" class="social-links">
+        <a href="https://www.linkedin.com/in/contactsameerkhan/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/jackboy481" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
+        <a href="https://www.instagram.com/mr_.sameerkhan/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        <a href="mailto:khanjack938@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+      </div>
+    </section>
+
+    <section id="education">
+      <h3 class="section-title">Education</h3>
+      <div class="grid two">
+        <article class="card">
+          <h4>BCA</h4>
+          <p><strong>GNIOT Group of Institutions, Greater Noida</strong></p>
+          <p>2022 – 2025</p>
+        </article>
+        <article class="card">
+          <h4>12th Grade (CBSE)</h4>
+          <p><strong>R.K. Modern School, Noida Sec‑55</strong></p>
+          <p>Completed in 2022</p>
+        </article>
+        <article class="card">
+          <h4>10th Grade (CBSE)</h4>
+          <p><strong>R.K. Modern School, Noida Sec‑55</strong></p>
+          <p>Completed in 2020</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h3 class="section-title">Technical Skills</h3>
+      <div class="grid two">
+        <article class="card">
+          <h4>Programming</h4>
+          <p>C, C++, Python</p>
+        </article>
+        <article class="card">
+          <h4>Web</h4>
+          <p>HTML, CSS, JavaScript, Bootstrap</p>
+        </article>
+        <article class="card">
+          <h4>Tools</h4>
+          <p>Git, GitHub, VS Code, Netlify, Excel</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h3 class="section-title">Internship Experience</h3>
+      <div class="grid two">
+        <article class="card">
+          <h4>Python Developer Intern — OctaNet Services Pvt. Ltd</h4>
+          <p class="muted">Sept 2024 – Oct 2024</p>
+          <p>Built a Python‑based Bank Management System with SQL for secure accounts, transactions, and storage.</p>
+          <a class="btn" href="my Certificates/Sameer Khan.pdf" target="_blank" rel="noopener">View Certificate</a>
+        </article>
+        <article class="card">
+          <h4>Data Science Intern — Cognifyz</h4>
+          <p class="muted">1‑month internship</p>
+          <p>Contributed to data cleaning and exploratory analysis; prepared visual summaries and dashboards.</p>
+          <a class="btn" href="my Certificates/octanet.pdf" target="_blank" rel="noopener">View Certificate</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h3 class="section-title">Projects</h3>
+      <div class="grid two">
+        <article class="card">
+          <h4>My Portfolio</h4>
+          <p>My personal portfolio website. Built using HTML, CSS, and JavaScript.</p>
+          <div class="social-links">
+            <a href="https://github.com/jackboy481" target="_blank" rel="noopener">Code</a>
+            <a href="#" target="_blank" rel="noopener">Live Demo</a>
+          </div>
+        </article>
+        <article class="card">
+          <h4>Food Order Website</h4>
+          <p>A modern food delivery platform featuring category-wise menu, add-to-cart, live price updates, and smooth UI built using Bootstrap and JavaScript.</p>
+          <div class="social-links">
+            <a href="https://github.com/jackboy481" target="_blank" rel="noopener">Code</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="certificates">
+      <h3 class="section-title">Certificates & Achievements</h3>
+      <div class="grid two">
+        <article class="card">
+          <h4>Power BI Workshop — OfficeMaster</h4>
+          <a class="btn" href="my Certificates/powerbi workshop.pdf" target="_blank" rel="noopener">View Certificate</a>
+        </article>
+        <article class="card">
+          <h4>AI Tools Workshop — be10x</h4>
+          <a class="btn" href="my Certificates/AI TOOLS WORKSHOP.pdf" target="_blank" rel="noopener">View Certificate</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h3 class="section-title">Contact</h3>
+      <div class="card">
+        <p>Email: <a href="mailto:khanjack938@gmail.com">khanjack938@gmail.com</a></p>
+        <p>Location: New Delhi, India</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Sameer Khan</p>
+    </div>
+  </footer>
+
+  <script>
+    // --- Theme Toggle (persist to localStorage)
+    const root = document.documentElement;
+    const key = "sk-theme";
+    const saved = localStorage.getItem(key);
+    if (saved === "light") root.classList.add("light");
+    const btn = document.getElementById('themeToggle');
+    const setPressed = () => btn.setAttribute('aria-pressed', root.classList.contains('light') ? 'true' : 'false');
+    setPressed();
+    btn.addEventListener('click', () => {
+      root.classList.toggle('light');
+      localStorage.setItem(key, root.classList.contains('light') ? 'light' : 'dark');
+      setPressed();
+    });
+
+    // --- Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // --- Smooth reveal animations
+    if (window.ScrollReveal) {
+      ScrollReveal().reveal('.card, .hero, .section-title', {
+        distance: '20px', duration: 600, easing: 'ease-out', origin: 'bottom', interval: 80
+      });
+    }
+
+    // --- Smooth scroll for same-page anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+    });
+  </script>
+</body>
+</html>
